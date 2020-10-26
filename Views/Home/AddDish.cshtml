@@ -3,25 +3,25 @@
 @model Dish
 <form asp-action="InsertDish" asp-controller="Home" method="POST">
     <div class="row">
-        <label asp-for="name"></label>
-        <input asp-for="name" required>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" required>
     </div>
     <div class="row">
-        <label asp-for="idchefs"></label>
-        <select asp-for="idchefs" required>
+        <label asp-for="ChefId"></label>
+        <select asp-for="ChefId" required>
             @foreach(var c in ViewBag.AllChefs)
             {
-                <option value="@c.idchefs">@c.name</option>
+                <option value="@c.ChefId">@c.FirstName @c.LastName</option>
             }
         </select>
     </div>
     <div class="row">
-        <label asp-for="calories"></label>
-        <input asp-for="calories" min="0" required>
+        <label asp-for="Calories"></label>
+        <input asp-for="Calories" min="0" required>
     </div>
     <div class="row">
-        <label asp-for="tastiness"></label>
-        <select asp-for="tastiness">
+        <label asp-for="Tastiness"></label>
+        <select asp-for="Tastiness">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -30,8 +30,8 @@
         </select>
     </div>
     <div class="row">
-        <label asp-for="description"></label>
-        <textarea asp-for="description" required></textarea>
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" required></textarea>
     </div>
     <div class="row">
         <input value="Add Dish" type="submit">

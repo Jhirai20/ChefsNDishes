@@ -16,8 +16,8 @@
             @foreach(var c in ViewBag.AllChefs)
             {
                 <tr>
-                    <td>@c.name</td>
-    
+                    <td>@c.FirstName @c.LastName</td>
+                    <td>@Chef.CalculateAge(c.DOB)</td>
                     <td>@c.CreatedDishes.Count</td>
                 </tr>
             }

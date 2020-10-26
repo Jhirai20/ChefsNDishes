@@ -908,11 +908,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jhira\\Documents\\MEGAsync\\Coding Dojo\\DotNet\\ChefsNDishes\\ChefsNDishes.csproj",
+      "projectUniqueName": "D:\\Drive\\Mega\\MEGAsync\\Coding Dojo\\DotNet\\ChefsNDishes\\ChefsNDishes.csproj",
       "projectName": "ChefsNDishes",
-      "projectPath": "C:\\Users\\jhira\\Documents\\MEGAsync\\Coding Dojo\\DotNet\\ChefsNDishes\\ChefsNDishes.csproj",
+      "projectPath": "D:\\Drive\\Mega\\MEGAsync\\Coding Dojo\\DotNet\\ChefsNDishes\\ChefsNDishes.csproj",
       "packagesPath": "C:\\Users\\jhira\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jhira\\Documents\\MEGAsync\\Coding Dojo\\DotNet\\ChefsNDishes\\obj\\",
+      "outputPath": "D:\\Drive\\Mega\\MEGAsync\\Coding Dojo\\DotNet\\ChefsNDishes\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -969,7 +969,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

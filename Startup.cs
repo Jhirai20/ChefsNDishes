@@ -27,7 +27,7 @@ namespace ChefsNDishes
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSession();
-            services.AddMvc();
+            services.AddMvc(option => option.EnableEndpointRouting = false);
             services.AddDbContext<MyContext>(options => options.UseMySql(Configuration["DBInfo:ConnectionString"]));
         }
 

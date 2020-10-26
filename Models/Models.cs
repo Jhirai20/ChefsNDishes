@@ -6,40 +6,49 @@ using System.Collections.Generic;
 
 namespace ChefsNDishes.Models
 {
-    public class MyContext :DbContext
+    public class MyContext : DbContext
     {
+        // base() calls the parent class' constructor passing the "options" parameter along
         public MyContext(DbContextOptions options) : base(options) { }
-        public DbSet<Chef> Chefs { get; set; }
-        public DbSet<Dish> Dishes { get; set; }
+        public DbSet<Chef> Chefs {get;set;}
+        public DbSet<Dish> Dishes {get;set;}
     }
-
+    
     public class Chef
     {
-        [Key]
-        public int idchefs { get; set; }
+       [Key]
+       public int ChefId {get;set;}
 
-        [Required]
-        public string name { get; set; }
-        [Required]
-        [CheckAge]
-        public DateTime dob { get; set; }
-        public List<Dish> CreatedDishes { get; set; }
+       [Required]
+       [Display(Name = "First Name")]
+       public string FirstName {get;set;}
 
-        public DateTime created_at { get; set; } = DateTime.Now;
-        public DateTime updated_at { get; set; } = DateTime.Now;
+       [Required]
+       [Display(Name = "Last Name")]
+       public string LastName {get;set;}
 
-        public class CheckAge : ValidationAttribute
+       [Required]
+       [CheckChefAge]
+       [Display(Name = "Date of Birth")]
+       public DateTime DOB {get;set;}
+       
+       public List<Dish> CreatedDishes {get;set;}
+       public DateTime CreatedAt {get;set;} = DateTime.Now;
+       public DateTime UpdateAt {get;set;} = DateTime.Now;
+
+        public class CheckChefAge : ValidationAttribute
         {
             protected override ValidationResult IsValid(object value, ValidationContext validationContext)
             {
                 int age = CalculateAge((DateTime)value);
                 if (age < 18)
                 {
-                    return new ValidationResult("Chef must be 18 or older!");
+                    return new ValidationResult("Chefs must be at least 18 years old!");
                 }
                 return ValidationResult.Success;
             }
         }
+
         public static int CalculateAge(DateTime dob)
         {
             int age = 0;
@@ -51,21 +60,30 @@ namespace ChefsNDishes.Models
             return age;
         }
     }
+
     public class Dish
     {
         [Key]
-        public int dishid { get; set; }
+        public int DishId {get;set;}
+
         [Required]
-        public string name{ get; set; }
+        [Display(Name = "Name of Dish")]
+        public string Name {get;set;}
+
         [Required]
-        public int tastiness{ get; set; }
+        [Display(Name = "# of Calories")]
+        public int Calories {get;set;}
+
         [Required]
-        public int calories{ get; set; }
+        public int Tastiness {get;set;}
+
         [Required]
-        public string description { get; set; }
-        public int ChefId { get; set; }
-        public Chef Creator { get; set; }
-        public DateTime created_at { get; set; } = DateTime.Now;
-        public DateTime updated_at { get; set; } = DateTime.Now;
+        public string Description {get;set;}
+
+        [Display(Name = "Chef")]
+        public int ChefId {get;set;}
+        public Chef Creator {get;set;}
+        public DateTime CreatedAt {get;set;} = DateTime.Now;
+        public DateTime UpdateAt {get;set;} = DateTime.Now;
     }
 }
